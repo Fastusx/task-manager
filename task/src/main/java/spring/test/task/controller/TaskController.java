@@ -35,7 +35,14 @@ public class TaskController {
         taskService.edit(id, task.getName(), task.getType());
         return ResponseEntity.noContent().build();
     }
-
+    
+    @PutMapping("/tasks/{id}/position/{id2}")
+    @ResponseBody
+    public ResponseEntity<Void> changePosition(@PathVariable long id, @PathVariable long id2){
+        taskService.changePosition(id,id2);
+        return ResponseEntity.noContent().build();
+    }
+    
     @PostMapping("/novaTask")
     public String create(@ModelAttribute Task task) {
         taskService.save(task);
@@ -44,3 +51,4 @@ public class TaskController {
 
 
 }
+
