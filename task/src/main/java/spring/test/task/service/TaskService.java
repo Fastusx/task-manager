@@ -35,4 +35,21 @@ private final TaskRepository taskRepository;
         System.out.println("Tarefa não encontrada!");
     }
     }
+    
+    public void changePosition(Long id, Long id2){
+
+        Task firstTask = taskRepository.findById(id).get();
+        Task lastTask = taskRepository.findById(id2).get();
+
+        String name1 = firstTask.getName();
+        String type1 = firstTask.getType();
+
+        String name2 = lastTask.getName();
+        String type2 = lastTask.getType();
+
+        edit(id,name2,type2);
+        edit(id2,name1,type1);
+
+    }
 }
+
