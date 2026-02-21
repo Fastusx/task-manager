@@ -44,17 +44,26 @@ button:active{
     width: 60vh;
 }
 
-#task-list{
+.list-container{
     background-color: rgb(241, 212, 173);
-    padding: 3vh;
-    max-height: 150px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    padding: 1vh;
+    max-height: 180px;
+    height: 180px;
+    width: 50vh;
     overflow-y: auto;
     margin: 5vh;
     overflow-x: hidden;
     
+}
+#task-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.list-element{
+    display: flex;
+    gap: 5px;
 }
 
 button{
@@ -66,4 +75,11 @@ button{
     align-self: center;
     padding: 1vh;
     margin-top: 1vh;
+}
+.list-element{
+    display: flex;
+    justify-content: space-between;
+}
+.action-container{
+    margin-right: 20px;
 }

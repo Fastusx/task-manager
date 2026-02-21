@@ -21,17 +21,19 @@
     </form>
 </div>
 
-<div>
+<div class="list-container">
     <ol id="task-list">
-        <li th:each="task : ${tasks}" th:id="'task-' + ${task.id}">
-            <button id="change_position_button" th:onclick="|pickItem('${task.id}')|">
-            <div>
-                <span class="span-name" th:text="${task.name}">Nome da tarefa </span>
-                <span class="span-type" th:text="${task.type}">Tipo da tarefa </span>
+        <li th:each="task : ${tasks}" class="list-element" th:id="'task-' + ${task.id}">
+            <div class="name-container">
+                <button class="change_position_button" th:onclick="|pickItem('${task.id}')|">
+                    <span class="span-name" th:text="${task.name}">Nome da tarefa </span>
+                    <span class="span-type" th:text="${task.type}">Tipo da tarefa </span>
+                </button>
+            </div>
+            <div class="action-container">    
                 <button class="delete_button" th:onclick="|deleteTask('${task.id}')|">🗑️</button>
                 <button class="edit_button" th:onclick="|newLayoutEdit('${task.id}')|">✏️</button>
             </div>
-            </button>
         </li>
     </ol>
 </div>
