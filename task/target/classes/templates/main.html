@@ -20,6 +20,7 @@
 </button>
 </form>
 </div>
+<div>
 <ol id="task-list">
 <li th:each="task : ${tasks}" th:id="'task-' + ${task.id}">
     <button id="change_position_button" th:onclick="|pickItem('${task.id}')|">
@@ -32,6 +33,7 @@
     </button>
 </li>
 </ol>
+</div>
 <script src="/script.js"></script>
 </body>
 

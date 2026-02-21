@@ -2,6 +2,7 @@ const list = document.getElementById('task-list');
 let editButton = document.querySelector('.btn.btn-secondary');
 let inputName = document.getElementById('name');
 let inputType = document.getElementById('type');
+let ids = [];
 
 function deleteTask(id){
     fetch('/tasks/' + id, {method: 'DELETE'})
