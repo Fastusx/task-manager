@@ -29,26 +29,25 @@ public class TaskController {
         taskService.delete(id);
         return ResponseEntity.noContent().build();
     }
+
     @PutMapping("/taskEdit/{id}")
     @ResponseBody
-    public ResponseEntity<Void> edit(@PathVariable long id, @RequestBody Task task){
+    public ResponseEntity<Void> edit(@PathVariable long id, @RequestBody Task task) {
         taskService.edit(id, task.getName(), task.getType());
         return ResponseEntity.noContent().build();
     }
-    
+
     @PutMapping("/tasks/{id}/position/{id2}")
     @ResponseBody
-    public ResponseEntity<Void> changePosition(@PathVariable long id, @PathVariable long id2){
-        taskService.changePosition(id,id2);
+    public ResponseEntity<Void> changePosition(@PathVariable long id, @PathVariable long id2) {
+        taskService.changePosition(id, id2);
         return ResponseEntity.noContent().build();
     }
-    
+
     @PostMapping("/novaTask")
     public String create(@ModelAttribute Task task) {
         taskService.save(task);
         return "redirect:/novaTask";
     }
 
-
 }
-

@@ -3,30 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de tarefas</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<form method="POST" action="/novaTask">
+<div class="main-container">
+    <form class="main-form" method="POST" action="/novaTask">
 <div class="form-floating mb-3">
-    <input class="form-control" id="name" placeholder="Nome da Tarefa" name="name">
-    <label for="name">Tarefa</label>
+    <input class="form-input" id="name" placeholder="Nome da Tarefa" name="name">
+    <label class="form-label" for="name">Tarefa</label>
 </div>
 <div class="form-floating">
-    <input class="form-control" id="type" placeholder="Tipo de Tarefa! Exemplo: Doméstica" name="type">
-    <label for="type">Categoria de Tarefa</label>
+    <input class="form-input" id="type" placeholder="Tipo de Tarefa! Exemplo: Doméstica" name="type">
+    <label class="form-label" for="type">Categoria de Tarefa</label>
 </div>
-<button type="submit" class="btn btn-secondary">Adicionar Tarefa
+<button type="submit" class="btn-secondary">Adicionar Tarefa
 </button>
 </form>
+</div>
 <ol id="task-list">
 <li th:each="task : ${tasks}" th:id="'task-' + ${task.id}">
+    <button id="change_position_button" th:onclick="|pickItem('${task.id}')|">
     <div>
         <span class="span-name" th:text="${task.name}">Nome da tarefa </span>
         <span class="span-type" th:text="${task.type}">Tipo da tarefa </span>
         <button class="delete_button" th:onclick="|deleteTask('${task.id}')|">🗑️</button>
         <button class="edit_button" th:onclick="|newLayoutEdit('${task.id}')|">✏️</button>
     </div>
+    </button>
 </li>
 </ol>
 <script src="/script.js"></script>
 </body>
+
 </html>
