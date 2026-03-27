@@ -1,9 +1,9 @@
 body{
-    margin: 0;                /* Remove margens padrão do navegador */
-  display: flex;            /* Ativa o Flexbox */
+    margin: 0;              
+  display: flex;            
   flex-direction: column;
-  justify-content: center;  /* Centraliza na horizontal */
-  align-items: center;      /* Centraliza na vertical */
+  justify-content: center; 
+  align-items: center;     
   min-height: 100vh;
   background: rgb(102, 37, 0);
   
